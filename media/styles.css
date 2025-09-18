@@ -1,0 +1,178 @@
+/* Base styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 0;
+}
+
+.header {
+  padding: 8px 12px;
+  flex: 0 0 auto;
+  background: var(--vscode-editor-background);
+  color: var(--vscode-editor-foreground);
+  border-bottom: 1px solid var(--vscode-panel-border);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: block;
+  position: relative;
+  min-height: 0;
+}
+
+/* Network graph container */
+.network-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--vscode-panel-border, lightgray);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--vscode-editor-background);
+  z-index: 0;
+}
+
+/* Overlay layer for interactive buttons */
+.overlay-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 20;
+  font-family: system-ui, sans-serif;
+}
+
+/* Node button groups */
+.node-buttons {
+  position: absolute;
+  display: flex;
+  gap: 2px;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+/* Individual mini buttons */
+.mini-btn {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid #555;
+  background: #fff;
+  font-size: 11px;
+  line-height: 14px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  font-weight: bold;
+}
+
+.mini-btn:hover {
+  background: #f5f5f5;
+}
+
+.mini-btn:active {
+  background: #e0e0e0;
+}
+
+.mini-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  background: #fafafa;
+  border-color: #999;
+  box-shadow: none;
+}
+
+/* Apply & Rerun button */
+.apply-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 30;
+  background: var(--vscode-button-background, #1d72ff);
+  color: var(--vscode-button-foreground, #fff);
+  font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--vscode-button-border, #1358c7);
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+
+.apply-button:hover {
+  background: var(--vscode-button-hoverBackground, #0f62f3);
+}
+
+.apply-button:active {
+  background: #0a4fbf;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.28) inset;
+}
+
+.apply-button:focus-visible {
+  outline: 2px solid var(--vscode-focusBorder, #fff);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(29, 114, 255, 0.5);
+}
+
+/* Danger variant for removal (X) button */
+.danger-btn {
+  background: #ffecec;
+  border-color: #d9534f;
+  color: #c9302c;
+}
+
+.danger-btn:hover {
+  background: #ffd6d6;
+}
+
+.danger-btn:active {
+  background: #ffb8b8;
+}
+
+/* Dark theme support */
+.vscode-dark .mini-btn {
+  background: var(--vscode-button-background, #3c3c3c);
+  color: var(--vscode-button-foreground, #ffffff);
+  border-color: var(--vscode-button-border, #555);
+}
+
+.vscode-dark .mini-btn:hover {
+  background: var(--vscode-button-hoverBackground, #444);
+}
+
+.vscode-dark .danger-btn {
+  background: #4a1f1f;
+  border-color: #8b2b2b;
+  color: #ff6b6b;
+}
+
+.vscode-dark .danger-btn:hover {
+  background: #5a2424;
+}

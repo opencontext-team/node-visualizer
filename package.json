@@ -16,8 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "node-visualizer.helloWorld",
-        "title": "Hello World"
+        "command": "node-visualizer.start",
+        "title": "Display Node Graph"
       },
       {
         "command": "extension.showHtmlButton",
@@ -32,6 +32,10 @@
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
     "test": "vscode-test"
+  },
+  "dependencies": {
+    "vis-data": "^8.0.3",
+    "vis-network": "^10.0.2"
   },
   "devDependencies": {
     "@types/vscode": "^1.104.0",
