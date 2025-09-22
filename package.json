@@ -1,5 +1,6 @@
 {
   "name": "node-visualizer",
+  "publisher": "open-context",
   "displayName": "node-visualizer",
   "description": "Interactive node graph visualizer",
   "version": "0.0.1",
